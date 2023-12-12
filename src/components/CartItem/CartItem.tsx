@@ -65,6 +65,7 @@ export default function CartItem({
             small
             value={item.quantity}
             onValueChange={handleQuantityChange}
+            testID="stepper-input"
           />
         </View>
         <Text

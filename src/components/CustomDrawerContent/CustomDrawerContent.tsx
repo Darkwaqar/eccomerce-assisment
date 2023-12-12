@@ -1,21 +1,21 @@
-import { Image, StyleSheet, Text, View } from 'react-native';
-import React from 'react';
+import { Image, StyleSheet, Text, View } from 'react-native'
+import React from 'react'
 import {
   DrawerContentScrollView,
   DrawerItemList,
-} from '@react-navigation/drawer';
-import COLORS from '../../constants/colors';
+} from '@react-navigation/drawer'
+import COLORS from '../../constants/colors'
 import {
   DrawerNavigationHelpers,
   DrawerDescriptorMap,
-} from '@react-navigation/drawer/lib/typescript/src/types';
-import { DrawerNavigationState, ParamListBase } from '@react-navigation/native';
+} from '@react-navigation/drawer/lib/typescript/src/types'
+import { DrawerNavigationState, ParamListBase } from '@react-navigation/native'
 
 const CustomDrawerContent = (
   props: React.JSX.IntrinsicAttributes & {
-    state: DrawerNavigationState<ParamListBase>;
-    navigation: DrawerNavigationHelpers;
-    descriptors: DrawerDescriptorMap;
+    state: DrawerNavigationState<ParamListBase>
+    navigation: DrawerNavigationHelpers
+    descriptors: DrawerDescriptorMap
   },
 ) => {
   return (
@@ -35,6 +35,7 @@ const CustomDrawerContent = (
           style={{ height: 70, width: 70, borderRadius: 20 }}
         />
         <Text
+          testID="person-name"
           style={{
             color: COLORS.white,
             fontWeight: 'bold',
@@ -48,9 +49,9 @@ const CustomDrawerContent = (
 
       <DrawerItemList {...props} />
     </DrawerContentScrollView>
-  );
-};
+  )
+}
 
-export default CustomDrawerContent;
+export default CustomDrawerContent
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({})

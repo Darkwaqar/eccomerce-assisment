@@ -94,7 +94,7 @@ const DetailsScreen = () => {
           sharedTransitionTag={`${data.id}-name`}
         >
           {/*
-            {/* Pet name and gender icon */}
+            {/* render name */}
 
           <Text
             style={{
@@ -106,7 +106,7 @@ const DetailsScreen = () => {
             {data.name}
           </Text>
 
-          {/* Render data type and age */}
+          {/* Render color */}
 
           <Text style={{ fontSize: 12, color: COLORS.dark }}>
             Color: {data.colour}

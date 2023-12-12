@@ -45,6 +45,7 @@ export default function Header() {
             style={{ width: 24, height: 24 }}
             color="black"
             link
+            testID="cart-icon"
             //@ts-ignore
             onPress={() => navigation.navigate('CartScreen')}
           />

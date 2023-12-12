@@ -1,32 +1,13 @@
-import React from 'react'
 import { CartItem } from '@/components'
-import {
-  Text,
-  ImageBackground,
-  SafeAreaView,
-  StatusBar,
-  Image,
-  StyleSheet,
-  ScrollView,
-  ActivityIndicator,
-  TouchableOpacity,
-} from 'react-native'
+import { CartState } from '@/store/cart'
+import { useNavigation } from '@react-navigation/native'
+import React from 'react'
+import { SafeAreaView, ScrollView, Text, TouchableOpacity } from 'react-native'
+import { Assets, Button, View } from 'react-native-ui-lib'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
-import COLORS from '../../constants/colors'
-import Animated from 'react-native-reanimated'
+import { useSelector } from 'react-redux'
 import tw from 'twrnc'
-import { useFetchProductQuery } from '@/services/modules/product'
-import { useNavigation, useRoute } from '@react-navigation/native'
-import {
-  Assets,
-  Button,
-  Dialog,
-  PanningProvider,
-  Toast,
-} from 'react-native-ui-lib'
-import { CartState, addItemToCart } from '@/store/cart'
-import { useDispatch, useSelector } from 'react-redux'
-import { View } from 'react-native-ui-lib'
+import COLORS from '../../constants/colors'
 
 export default function Cart() {
   const items = useSelector((state: { cart: CartState }) => state.cart.items)
