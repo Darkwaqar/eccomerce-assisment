@@ -4,7 +4,11 @@
 
 ### Note
 
-This application is based on Component First Approach That mean unit test will be Created in the level of Component. Rather Then Screen. you can Find the Test file in every Component in Component Folder. Thanks
+This application is based on Component First Approach That mean unit test will be Created in the level of Component.you can Find the Test file in every Component in Component Folder. Thanks
+
+## Note 2
+
+Add Screen Test to The HomeScreen To Test RTK Query With mock Data. `yarn test HomeScreen`
 
 to Run Test just type `yarn test`
 
