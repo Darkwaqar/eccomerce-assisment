@@ -1,30 +1,14 @@
-import React from 'react'
-import {
-  Dimensions,
-  SafeAreaView,
-  Image,
-  TextInput,
-  TouchableOpacity,
-  FlatList,
-  ScrollView,
-  StyleSheet,
-} from 'react-native'
-import { View, Text, Button, Assets } from 'react-native-ui-lib'
-import COLORS from '../../constants/colors'
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
-import pets from '../../constants/pets'
-import Animated from 'react-native-reanimated'
 import { Divider, Header, ProductHomeItem, TabView } from '@/components'
+import { useFetchProductsQuery } from '@/services/modules/product'
+import React from 'react'
+import { Dimensions, FlatList } from 'react-native'
+import { Assets, Button, Text, View } from 'react-native-ui-lib'
 import tw from 'twrnc'
-import {
-  useFetchMenuQuery,
-  useFetchProductsQuery,
-} from '@/services/modules/product'
+import COLORS from '../../constants/colors'
 
 const { height } = Dimensions.get('window')
 
 const HomeScreen = () => {
-  const [selectedCategoryIndex, setSeletedCategoryIndex] = React.useState(0)
   const { data, isSuccess, isLoading, isFetching } = useFetchProductsQuery(null)
 
   return (
@@ -61,68 +45,4 @@ const HomeScreen = () => {
   )
 }
 
-const style = StyleSheet.create({
-  mainContainer: {
-    flex: 1,
-    backgroundColor: COLORS.light,
-    borderTopLeftRadius: 40,
-    borderTopRightRadius: 40,
-    marginTop: 20,
-    paddingHorizontal: 20,
-    paddingVertical: 40,
-    minHeight: height,
-  },
-  searchInputContainer: {
-    height: 50,
-    backgroundColor: COLORS.white,
-    borderRadius: 7,
-    paddingHorizontal: 20,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-  categoryBtn: {
-    height: 50,
-    width: 50,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 10,
-  },
-  categoryBtnName: {
-    color: COLORS.dark,
-    fontSize: 10,
-    marginTop: 5,
-    fontWeight: 'bold',
-  },
-  cardContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 20,
-  },
-  cardDetailsContainer: {
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
-    height: 120,
-    backgroundColor: COLORS.white,
-    flex: 1,
-    borderTopRightRadius: 18,
-    borderBottomRightRadius: 18,
-    padding: 20,
-    justifyContent: 'center',
-    // borderRadius: 18,
-  },
-  cardImageContainer: {
-    height: 150,
-    width: 140,
-    backgroundColor: COLORS.background,
-    borderRadius: 20,
-    overflow: 'hidden',
-  },
-})
 export default HomeScreen

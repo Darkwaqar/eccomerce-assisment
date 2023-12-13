@@ -1,31 +1,21 @@
+import { useFetchProductQuery } from '@/services/modules/product'
+import { CartState, addItemToCart } from '@/store/cart'
+import { useNavigation, useRoute } from '@react-navigation/native'
 import React, { useState } from 'react'
 import {
-  Text,
-  ImageBackground,
-  SafeAreaView,
-  StatusBar,
-  Image,
-  StyleSheet,
-  ScrollView,
   ActivityIndicator,
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
   TouchableOpacity,
 } from 'react-native'
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
-import COLORS from '../../constants/colors'
 import Animated from 'react-native-reanimated'
-import tw from 'twrnc'
-import { useFetchProductQuery } from '@/services/modules/product'
-import { useNavigation, useRoute } from '@react-navigation/native'
-import {
-  Assets,
-  Button,
-  Dialog,
-  PanningProvider,
-  Toast,
-} from 'react-native-ui-lib'
-import { CartState, addItemToCart } from '@/store/cart'
+import { Assets, Button, Toast, View } from 'react-native-ui-lib'
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import { useDispatch, useSelector } from 'react-redux'
-import { View } from 'react-native-ui-lib'
+import tw from 'twrnc'
+import COLORS from '../../constants/colors'
 
 const DetailsScreen = () => {
   const navigation = useNavigation()
@@ -224,13 +214,8 @@ const style = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
-    // position: 'absolute',
-    // left: 0,
-    // right: 0,
-    // height: 120,
     backgroundColor: COLORS.white,
     marginHorizontal: 20,
-    // flex: 1,
     bottom: -60,
     borderRadius: 18,
     padding: 20,
