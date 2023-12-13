@@ -9,6 +9,7 @@ export default function ProductHomeItem({ item }: { item: Product }) {
   const navigation = useNavigation()
   return (
     <TouchableOpacity
+      testID={`product-item-${item.id}`}
       onPress={() => {
         // @ts-ignore
         navigation.navigate('DetailsScreen', item.id)
